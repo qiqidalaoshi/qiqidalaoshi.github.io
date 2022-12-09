@@ -24,13 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
+  <meta name="keywords" content="OpenCore 黑苹果 Ventura 4代GPU" />
+
 
 <link rel="canonical" href="http://example.com/2022/12/08/ventura-HD4600%E9%A9%B1%E5%8A%A8%E8%A1%A5%E4%B8%81/">
 
 
 
   <title>
-ventura-HD4600驱动补丁 |
+ventura-HD4600驱动补丁 - Ventura |
 Hackintosh = 黑苹果教程 = 论坛-教程</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -100,12 +102,12 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -130,7 +132,9 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Ventura/" itemprop="item" rel="index" title="In Ventura"><span itemprop="name">Ventura</span></a>
+<meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="Zh-Cn">
@@ -149,12 +153,55 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <h1 id="Ventura下安装HD4600-x2F-HD5000补丁教程"><a href="#Ventura下安装HD4600-x2F-HD5000补丁教程" class="headerlink" title="Ventura下安装HD4600&#x2F;HD5000补丁教程"></a>Ventura下安装HD4600&#x2F;HD5000补丁教程</h1><h2 id="对于新版本的Ventura的发布，很多显卡已被删除，因此，在更新-x2F-安装Vemtura-13后出现显卡为驱动的问题（3MB），这里为大家做出驱动4代显卡的教学（HD4000-x2F-HD4600-x2F-HD5000等）"><a href="#对于新版本的Ventura的发布，很多显卡已被删除，因此，在更新-x2F-安装Vemtura-13后出现显卡为驱动的问题（3MB），这里为大家做出驱动4代显卡的教学（HD4000-x2F-HD4600-x2F-HD5000等）" class="headerlink" title="对于新版本的Ventura的发布，很多显卡已被删除，因此，在更新&#x2F;安装Vemtura 13后出现显卡为驱动的问题（3MB），这里为大家做出驱动4代显卡的教学（HD4000&#x2F;HD4600&#x2F;HD5000等）"></a>对于新版本的Ventura的发布，很多显卡已被删除，因此，在更新&#x2F;安装Vemtura 13后出现显卡为驱动的问题（3MB），这里为大家做出驱动4代显卡的教学（HD4000&#x2F;HD4600&#x2F;HD5000等）</h2><h3 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一.准备工作"></a>一.准备工作</h3><p>1.OpenCore  Legacy Pather（简称OCLP），这里用到的是V0.5.0（GUI）版本的；<br>2.OpenCore Configurator （或OCAuxiliaryTools）,这里下载网站请参考 <span class="exturl" data-url="aHR0cHM6Ly9xaXFpZGFsYW9zaGkuZ2l0aHViLmlvLzIwMjIvMTIvMDgvb3BlbmNvcmUv">opencore 初步配置 One</span> 中的（4.6.2）OC编辑器 篇；</p>
+<p>3.驱动AMFIExemption.kext(不强求)，具体方法请参考本文章的 二实际操作-2</p>
+<h3 id="二-实际操作"><a href="#二-实际操作" class="headerlink" title="二.实际操作"></a>二.实际操作</h3><p>1.用 OpenCore Configurator 打开EFI-OC-Config.plist 文件 ；<br>2.在NVRAM -› 7C436110-AB2A-4BBB-A880-FE41995C9F82 -› boot-args中添加amfi_get_out_of_my_way&#x3D;1启动参数（Clover与OC位置不同，在Boot -› Arguments处更改 项）；<br>3.在NVRAM -› 7C436110-AB2A-4BBB-A880-FE41995C9F82 -› csr-active-config改成FF0F0000（关闭SIP）；<br>4.重启系统后打开 OpenCore  Legacy Pather，选择post install root patch，继续选择start root patching，等待加载，添加信任新扩展并重启；<br>5.点击左上角苹果图标 -› 关于本机 -› 显卡 处查看是否有显存出现，其他内容请参考后续-Hackintool解读</p>
+<img data-src="https://raw.githubusercontent.com/qiqidalaoshi/qiqidalaoshi.github.io/master/1664205605-Snipaste_2022-09-02_20-08-53.png" alt="1664205605-Snipaste_2022-09-02_20-08-53" style="zoom:67%;" />
+
+<p>三.系统更改</p>
+<blockquote>
+<p>Mac OS10.11以上版本，Apple为了系统环境安全，在核心中引入了SIP（System Integrity Protection），又称Rootless Mode机制，更改系统内容就要将该机制关闭才能操作，因此我们必须要关闭SIP</p>
+</blockquote>
+<blockquote>
+<p>注意：更改SIP需要进入恢复模式**<code>Recovery</code>**操作，白苹果与黑苹果进入恢复模式的方式不同，请勿掺杂！</p>
+</blockquote>
+<p>⑴白苹果</p>
+<p>1.开机按住<strong>command+R</strong>键，进入恢复模式；</p>
+<p>2.开机按住<strong>Option</strong>键，在出现的启动选择菜单中选择**<code>RecoveryHD</code>**进入恢复模式</p>
+<p>⑵黑苹果</p>
+<p>1.开机选择 <strong><code>Recovery版本号</code></strong>  直接进入恢复模式</p>
+<p><img data-src="https://raw.githubusercontent.com/qiqidalaoshi/qiqidalaoshi.github.io/master/1632216237501.jpg" alt="1632216237501"></p>
+<p>Ⅰ .关闭SIP</p>
+<p>1.在恢复模式下，点击实用工具 -› 终端；</p>
+<p>2.在终端中输入命令：**<code>csrutil disable</code>** 并回车执行命令；</p>
+<p>3.出现**<code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect.</code>**（成功关闭系统完整性保护。请重启机器以使更改生效。）时，则关闭SIP成功（系统完整性保护）；</p>
+<p>4.重启，进入系统，在终端中输入**<code>csrutil status</code>** 回车执行命令；</p>
+<p>5.System Integrity Protection status: disabled.则表示系统完整性保护功能已经关闭。</p>
+<p>Ⅱ.开启SIP</p>
+<p>1.在恢复模式下，点击实用工具 -› 终端；</p>
+<p>2.在终端中输入命令：**<code>csrutil enable</code>** 并回车执行命令；</p>
+<p>3.出现**<code>Successfully enable System Integrity Protection. Please restart the machine for the changes to take effect.</code>**（成功开启系统完整性保护。请重启机器以使更改生效。）时，则开启SIP成功（系统完整性保护）；</p>
+<p>4.重启，进入系统，在终端中输入**<code>csrutil status</code>** 回车执行命令；</p>
+<p>5.System Integrity Protection status: enabled.则表示系统完整性保护功能已经关闭。</p>
+<blockquote>
+<p>注意:系统完整性保护主要作用是保护系统稳定性，安全性，建议更改后，及时重新开启该功能，不要长期处于关闭状态,以防造成不必要的损失。</p>
+</blockquote>
+
+      <div class="tags">
+          <a href="/tags/%E9%A9%B1%E5%8A%A8%E8%A1%A5%E4%B8%81/" rel="tag"><i class="ic i-tag"></i> 驱动补丁</a>
+      </div>
   </div>
 
    <footer>
 
     <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-12-09 10:08:10" itemprop="dateModified" datetime="2022-12-09T10:08:10+08:00">2022-12-09</time>
+  </span>
 </div>
 
       
@@ -208,7 +255,7 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
     <div class="item left">
       
 
-  <a href="/2022/12/08/oc-1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph47e9vtj20zk0m8x6l.jpg" title="opencore 初步配置 Two">
+  <a href="/2022/12/08/oc-1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4wqtg4j20zk0m8x6p.jpg" title="opencore 初步配置 Two">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> OpenCore</span>
   <h3>opencore 初步配置 Two</h3>
@@ -232,8 +279,12 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ventura%E4%B8%8B%E5%AE%89%E8%A3%85HD4600-x2F-HD5000%E8%A1%A5%E4%B8%81%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">Ventura下安装HD4600&#x2F;HD5000补丁教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84Ventura%E7%9A%84%E5%8F%91%E5%B8%83%EF%BC%8C%E5%BE%88%E5%A4%9A%E6%98%BE%E5%8D%A1%E5%B7%B2%E8%A2%AB%E5%88%A0%E9%99%A4%EF%BC%8C%E5%9B%A0%E6%AD%A4%EF%BC%8C%E5%9C%A8%E6%9B%B4%E6%96%B0-x2F-%E5%AE%89%E8%A3%85Vemtura-13%E5%90%8E%E5%87%BA%E7%8E%B0%E6%98%BE%E5%8D%A1%E4%B8%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%883MB%EF%BC%89%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B8%BA%E5%A4%A7%E5%AE%B6%E5%81%9A%E5%87%BA%E9%A9%B1%E5%8A%A84%E4%BB%A3%E6%98%BE%E5%8D%A1%E7%9A%84%E6%95%99%E5%AD%A6%EF%BC%88HD4000-x2F-HD4600-x2F-HD5000%E7%AD%89%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">对于新版本的Ventura的发布，很多显卡已被删除，因此，在更新&#x2F;安装Vemtura 13后出现显卡为驱动的问题（3MB），这里为大家做出驱动4代显卡的教学（HD4000&#x2F;HD4600&#x2F;HD5000等）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.1.</span> <span class="toc-text">一.准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.2.</span> <span class="toc-text">二.实际操作</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2022/12/08/ventura-HD4600%E9%A9%B1%E5%8A%A8%E8%A1%A5%E4%B8%81/" rel="bookmark" title="ventura-HD4600驱动补丁">ventura-HD4600驱动补丁</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -252,13 +303,13 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">1</span>
+        <span class="count">2</span>
         <span class="name">categories</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">1</span>
+        <span class="count">2</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -308,6 +359,26 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/Ventura/" title="In Ventura">Ventura</a>
+</div>
+
+    <span><a href="/2022/12/08/ventura-HD4600%E9%A9%B1%E5%8A%A8%E8%A1%A5%E4%B8%81/" title="ventura-HD4600驱动补丁">ventura-HD4600驱动补丁</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/OpenCore/" title="In OpenCore">OpenCore</a>
+</div>
+
+    <span><a href="/2022/12/08/oc-3/" title="opencore 初步配置 Four">opencore 初步配置 Four</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/OpenCore/" title="In OpenCore">OpenCore</a>
 </div>
 
@@ -322,25 +393,6 @@ Hackintosh = 黑苹果教程 = 论坛-教程</title>
 </div>
 
     <span><a href="/2022/12/08/oc-2/" title="opencore 初步配置 Three">opencore 初步配置 Three</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2022/12/08/ventura-HD4600%E9%A9%B1%E5%8A%A8%E8%A1%A5%E4%B8%81/" title="ventura-HD4600驱动补丁">ventura-HD4600驱动补丁</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/OpenCore/" title="In OpenCore">OpenCore</a>
-</div>
-
-    <span><a href="/2022/12/08/oc-3/" title="opencore 初步配置 Four">opencore 初步配置 Four</a></span>
   </li>
 
       
